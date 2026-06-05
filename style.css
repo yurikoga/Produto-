@@ -1,0 +1,164 @@
+:root {
+    --pink: #ff4081;
+    --dark-pink: #e91e63;
+    --cyan: #00e5ff;
+    --text-gray: #666;
+    --light-gray: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Fundo gradiente idêntico ao da imagem */
+    background: linear-gradient(135deg, #e0e0e0 50%, #ff80ab 50.1%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    background: white;
+    width: 850px;
+    height: 480px;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- LADO ESQUERDO --- */
+.info-side {
+    width: 45%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.rating {
+    margin-bottom: 25px;
+}
+
+.star {
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+.star.filled { color: #ff80ab; }
+.star.empty { color: #ddd; }
+
+.price-container {
+    margin-bottom: 30px;
+}
+
+.old-price {
+    display: block;
+    text-decoration: line-through;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.current-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-pink);
+}
+
+.btn-add {
+    background: var(--cyan);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    width: fit-content;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover { background: #00b8d4; }
+
+/* --- LADO DIREITO (ROSA) --- */
+.product-side {
+    width: 55%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+/* O corte curvado rosa */
+.pink-bg {
+    position: absolute;
+    top: 0;
+    left: -15%; /* Faz o fundo rosa avançar sobre o branco */
+    width: 115%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #ff4081, #e91e63);
+    clip-path: circle(85% at 85% 50%); /* Cria a curvatura perfeita */
+    z-index: 1;
+}
+
+.camera-img {
+    position: absolute;
+    width: 500px; /* Tamanho grande igual ao print */
+    top: 40px;
+    left: -120px; /* A câmera "fura" a divisão e entra no lado branco */
+    z-index: 3;
+    filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.3));
+}
+
+.product-meta {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    color: white;
+}
+
+.brand { font-size: 14px; opacity: 0.9; }
+
+.model {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.shipping {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover { background: rgba(255,255,255,0.1); }
